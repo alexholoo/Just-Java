@@ -3,43 +3,61 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
     tools:context="com.example.h94hu.justjava.MainActivity">
 
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:src="@mipmap/ic_launcher"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quantity"
+        android:textSize="16sp"
         android:layout_marginBottom="8dp"
         android:textAllCaps="true" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
-        android:onClick="increaseQuantity"/>
 
-    <TextView
-        android:id="@+id/tvQuantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="0" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_black_24dp"
+            android:id="@+id/btnPlus"
+            android:layout_toRightOf="@+id/tvQuantity"
+            android:onClick="increaseQuantity"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"
-        android:onClick="decreaseQuantity"/>
+        <TextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_centerInParent="true"
+            android:layout_alignBaseline="@+id/btnPlus"
+            android:textAlignment="center" />
 
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_remove_black_24dp"
+            android:layout_toLeftOf="@id/tvQuantity"
+            android:onClick="decreaseQuantity"/>
+
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Price"
+        android:textSize="16sp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
         android:textAllCaps="true" />
 
@@ -54,6 +72,7 @@
         android:id="@+id/orderBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
         android:text="Order"
         android:onClick="submitOrder"/>
